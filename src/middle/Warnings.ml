@@ -6,9 +6,6 @@ let warnings = ref []
 let init () = warnings := []
 let collect () = List.rev !warnings
 
-let add_warning (span : Location_span.t) (message : string) =
-  warnings := (span, message) :: !warnings
-
 let empty file =
   warnings :=
     ( Location_span.empty
@@ -26,7 +23,7 @@ let deprecated token (pos, message) =
     Location_span.of_positions_opt begin_pos end_pos
     |> Option.value ~default:Location_span.empty
   in
-  add_warning span message
+  warnings := (span, message) :: !warnings
 
 let pp ?printed_filename ppf (span, message) =
   let loc_str =
