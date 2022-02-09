@@ -26363,6 +26363,7 @@ Display all Stan math signatures exposed in the language
   to_matrix(array[] real, int, int) => matrix
   to_matrix(array[] real, int, int, int) => matrix
   to_matrix(array[] row_vector) => matrix
+  to_matrix(array[] vector) => matrix
   to_matrix(array[,] int) => matrix
   to_matrix(array[,] real) => matrix
   to_row_vector(vector) => row_vector

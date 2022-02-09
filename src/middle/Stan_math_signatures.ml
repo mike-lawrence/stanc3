@@ -2129,6 +2129,7 @@ let () =
     ("to_matrix", ReturnType UMatrix, [UVector; UInt; UInt; UInt], AoS) ;
   add_unqualified ("to_matrix", ReturnType UMatrix, [URowVector], AoS) ;
   add_unqualified ("to_matrix", ReturnType UMatrix, [UArray URowVector], AoS) ;
+  add_unqualified ("to_matrix", ReturnType UMatrix, [UArray UVector], AoS) ;
   add_unqualified
     ("to_matrix", ReturnType UMatrix, [URowVector; UInt; UInt], AoS) ;
   add_unqualified

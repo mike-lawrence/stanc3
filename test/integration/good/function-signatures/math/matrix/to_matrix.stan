@@ -4,6 +4,7 @@ data {
   vector[d_int] d_vector;
   row_vector[d_int] d_row_vector;
   array[d_int] row_vector[d_int] array_d_row_vector;
+  array[d_int] vector[d_int] array_d_vector;
   array[6] real d_array;
   array[6, 2] real d_array2;
   array[6] int d_iarray;
@@ -16,6 +17,7 @@ transformed data {
   transformed_data_matrix = to_matrix(d_vector);
   transformed_data_matrix = to_matrix(d_row_vector);
   transformed_data_matrix = to_matrix(array_d_row_vector);
+  transformed_data_matrix = to_matrix(array_d_vector);
   
   transformed_data_matrix = to_matrix(d_matrix, 4, 2);
   transformed_data_matrix = to_matrix(d_vector, 4, 3);
@@ -39,6 +41,7 @@ parameters {
   vector[d_int] p_vector;
   row_vector[d_int] p_row_vector;
   array[d_int] row_vector[d_int] array_p_row_vector;
+  array[d_int] vector[d_int] array_p_vector;
   array[6] real p_array;
   array[6, 7] real p_array2;
 }
@@ -49,6 +52,7 @@ transformed parameters {
   transformed_param_matrix = to_matrix(d_vector);
   transformed_param_matrix = to_matrix(d_row_vector);
   transformed_param_matrix = to_matrix(array_p_row_vector);
+  transformed_param_matrix = to_matrix(array_p_vector);
   
   transformed_param_matrix = to_matrix(d_matrix, 4, 2);
   transformed_param_matrix = to_matrix(d_vector, 3, 5);
